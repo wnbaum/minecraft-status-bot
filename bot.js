@@ -43,7 +43,7 @@ client.on("interactionCreate", async (interaction) => {
 
 function getStatus() {
 	return new Promise((resolve, reject) => {
-		const q = new Query({host: process.env.IP, port: 25565, timeout: 7500});
+		const q = new Query({host: process.env.IP, port: 25565, timeout: 5000});
 
 		const date = dayjs().format("dddd MMMM D");
 		const time = dayjs().format("h:mm:ss a");
@@ -59,7 +59,7 @@ function getStatus() {
 	
 			q.close();
 		}).catch(() => {
-			let status = "Server is **offline**.";
+			let status = "Server is **offline**.\n";
 			status += "Last updated " + date + " at " + time;
 			resolve(status);
 		})
