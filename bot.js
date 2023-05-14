@@ -58,7 +58,9 @@ function getStatus() {
 	
 			q.close();
 		}).catch(() => {
-			resolve("Server is **offline**.");
+			let status = "Server is **offline**.";
+			status += "Last updated " + date + " at " + time;
+			resolve(status);
 		})
 	})
 
