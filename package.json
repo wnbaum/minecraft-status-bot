@@ -1,0 +1,22 @@
+{
+  "name": "minecraft-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "minecraft-query": "^1.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
