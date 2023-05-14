@@ -45,14 +45,15 @@ function getStatus() {
 	return new Promise((resolve, reject) => {
 		const q = new Query({host: process.env.IP, port: 25565, timeout: 7500});
 
+		const date = dayjs().format("dddd MMMM D");
+		const time = dayjs().format("h:mm:ss a");
+
 		q.fullStat().then(data => {
 			let status = "Server is **online**!\n"
 			status += data.online_players + "/" + data.max_players + " players.\n"
 			for (i in data.players) {
 				status += data.players[i] + "\n"
 			}
-			date = dayjs().format("dddd MMMM D");
-			time = dayjs().format("h:mm:ss a");
 			status += "Last updated " + date + " at " + time;
 			resolve(status)
 	
